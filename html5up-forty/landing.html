@@ -138,7 +138,10 @@
 											<p>
 												It will be necessary to access the following two fields, therefore X and Z.
 												for this it is necessary to go through the Transform function as well as the desired control
-												to access.
+												to access.</br>
+												
+												Once in possession of these two data, using ModBus Protocol i was able to transmit this data to a mobile application. 
+
 											</p>
 
 
@@ -161,7 +164,31 @@
 													
 												</ul>
 												We used the ModBus TCP / IP protocol because we
-												want to have a server that accepts multiple clients.  </p>
+												want to have a server that accepts multiple clients. Once the data transfer has been completed and validated I was able to move forward. 
+												The next step was to convert the unity data into GPS coordinates.   </p>
+
+											<p>
+												Since this was a real bay in western France near Brest, we managed to identify the starting point of the boat on the simulation.
+												
+											</p>
+											<a><img src="images/brestBay.JPG" alt="" data-position="top center" />	</a>
+											<p>
+												<ul>
+													<li>
+														Latitude is the angle of the earth and the position of the boat in Z.
+													</li>
+													<li>
+														Longitude is the difference in time resulting from the time it takes for the sun to pass midday from one meridian to another.
+
+													</li>
+
+
+												</u>
+												
+											</p>
+											<a><img src="images/formule.JPG" alt="" data-position="top center" />	</a>
+											<p>Using this mathematical formula I was able to convert GPS coordinates into XX ° YYY'ZZZ" format and display it.</p>
+
 											<ul class="actions">
 												<li><a href="generic.html" class="button">Learn more</a></li>
 											</ul>
