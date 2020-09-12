@@ -46,7 +46,7 @@
 								<h1>S420</h1>
 							</header>
 							<div class="content">
-								<p>This academic project project called "Sailing simulator" is a sailboat simulator which retransmits the
+								<p>This academic project called "Sailing simulator" is a sailboat simulator which retransmits the
 									sensations of displacement as if we were really in the open sea.<br />
 								</p>
 								
@@ -101,7 +101,7 @@
 													piloted to recreate the conditions and sensations of navigation but in
 													staying on earth.</p>
 													<p>
-														The Lycée La Fayette which had already participated in the development and construction in the past
+														Lycée La Fayette which had already participated in the development and construction in the past
 														of several elements of this model remained very interested in this dinghy, but this
 														This time, this dinghy would be used for the training of the students of the Lycée La Fayette. In
 														on the other hand, the mechanics and technology used for the simulator remain current, its appearance and the bulk it generates make it, however, obsolete, it is
@@ -187,7 +187,46 @@
 												
 											</p>
 											<a><img src="images/formule.JPG" alt="" data-position="top center" />	</a>
-											<p>Using this mathematical formula I was able to convert GPS coordinates into XX ° YYY'ZZZ" format and display it.</p>
+											<p>Using this mathematical formula I was able to convert GPS coordinates into XX ° YYY'ZZZ" format and display it. The data conversion allows first of all to add a tangent which will make it possible to calculate the new values.</br>
+												The previous formula resulted in this script : 
+											</p>
+											
+
+											
+											
+											
+									
+										<code>angle_z = Math.Atan(z_boat / rayon) * ( 180  / Math.PI ); </br></code>
+										<code>	angle_x =  Math.Atan(x_boat / rayon ) * (180  / Math.PI);</br></code>
+										<code>  lat_boat_d = lat_bay_d + angle_x;</br></code>
+										<code> 	long_boat_d = long_bay_d + angle_z; </br></code>
+										<code>	lat_boat[0] = Mathf.FloorToInt((float)lat_boat_d); </br></code>
+										<code>	lat_boat[1] = (Mathf.FloorToInt(((float)lat_boat_d -   </br></code>	
+										<code>	Mathf.Floor   ToInt((float)lat_boat_d)) * 60  ) ) ; </br></code>	
+										<code>	float tmp = ((float)lat_boat_d - Mathf.FloorToInt((float)lat_boat_d)) * 60   ;  </br></code>
+										<code>	lat_boat[2] = Mathf.FloorToInt((tmp - Mathf.FloorToInt(tmp) )* 60 ) ; </code>	
+										
+									</br> 
+										
+											
+
+											<p>
+												I used arrays to stock every integer in my three values to display ; </br>
+												<code>index[0]=Degrees => lat_boat[0] = Mathf.FloorToInt((float)lat_boat_d) ; </br></code>  
+												<code> index[1]=Minutes => lat_boat[1] = (Mathf.FloorToInt(((float)lat_boat_d - </br></code>
+												<code>	Mathf.Floor ToInt((float)lat_boat_d)) * 60 ) ) ;</br> </code>
+												<code> index[2]=Seconds => lat_boat[2] = Mathf.FloorToInt((tmp - Mathf.FloorToInt(tmp) )* 60 ) ;</br> </code>
+											</p>
+
+											<div>
+											<p>
+											<strong>here are the displays on the application :</strong>			
+											</p>	
+											<img src="images/screen1.JPG" alt="" data-position="top center" />
+											<img src="images/screen2.JPG" alt="" data-position="top center" />
+											</div>
+
+
 
 											<ul class="actions">
 												<li><a href="generic.html" class="button">Learn more</a></li>
@@ -197,17 +236,43 @@
 								</section>
 								<section>
 									<a href="generic.html" class="image">
-										<img src="images/pic10.jpg" alt="" data-position="25% 25%" />
+										<img src="images/s420jeux.JPG" alt="" data-position="25% 25%" />
 									</a>
 									<div class="content">
 										<div class="inner">
 											<header class="major">
-												<h3>Sed nunc ligula</h3>
+												<h3>My proposals to the project</h3>
 											</header>
-											<p>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis magna sed nunc rhoncus condimentum sem. In efficitur ligula tate urna. Maecenas massa sed magna lacinia magna pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis tempus.</p>
-											<ul class="actions">
-												<li><a href="generic.html" class="button">Learn more</a></li>
+											<p>
+												In a second part of the project, I had to show my creativity and what it could be add to the project. My decisions focused on functionalities that could better situate 
+												the user on the simulation.
+											</p>
+											<ul>
+												<li>Minimap</li>
+												<li>Horizontal Compass Hud</li>
 											</ul>
+											<p>The mini-map is one of the essential tools of current simulators and video games, 
+												it allows the user to have a precise idea of ​​where he is in the simulation,
+												it could be a kind of help to the user if they find themselves lost or about to encounter an unwanted obstacle and thus get around it.
+											</p>
+											<p><strong>Minimap display : </strong></p>
+
+											
+												<img src="images/display1.JPG" alt="" data-position="25% 25%" />
+											
+											<p>
+												
+												The horizontal compass is what we could understand as an alternative to a fixed compass, inspired by current video games, 
+												I decided to integrate a horizontal compass in the simulation.
+												The advantages of this compass are that it saves space and, above all, the user does not need to take his eyes off his course at any time to know his position and his heading,
+												 it can be a very interesting alternative to the compass or a complement to it. 
+											</p>
+
+											<p><strong>Compass display : </strong></p>
+
+											<img src="images/boussoles.JPG" alt="" data-position="25% 25%" />
+
+									
 										</div>
 									</div>
 								</section>
@@ -217,12 +282,12 @@
 							<section id="three">
 								<div class="inner">
 									<header class="major">
-										<h2>Massa libero</h2>
+										<h2>My conclusion about this project :</h2>
 									</header>
-									<p>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus pharetra. Pellentesque condimentum sem. In efficitur ligula tate urna. Maecenas laoreet massa vel lacinia pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus amet pharetra et feugiat tempus.</p>
-									<ul class="actions">
-										<li><a href="generic.html" class="button next">Get Started</a></li>
-									</ul>
+									<p>To conclude this project brought me a lot on the theoretical level, for several weeks I had to call on my creativity or my ability to collect information to advance in my project.
+										My tasks were confusing at first and then over the weeks I realized that I had to collect information and apply it, </br>
+										moreover I had a lot of pleasure in carrying out my tasks because for each of them I saw precisely the usefulness, I also had this part of aesthetics on all the tools that I could develop for the User-Interface.</p>
+
 								</div>
 							</section>
 
